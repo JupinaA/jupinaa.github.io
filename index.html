@@ -39,17 +39,20 @@ body { background-color: #0f172a; color: #f8fafc; font-family: 'Inter', sans-ser
 .flow-threat { border: 1px dashed #f97316; background-color: rgba(249, 115, 22, 0.1); color: #f97316; padding: 0.25rem; border-radius: 0.25rem; font-size: 0.75rem; margin-top: 0.5rem; }
 .step-dot { background: #ec4899; color: white; width: 1.5rem; height: 1.5rem; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: bold; margin-right: 0.75rem; flex-shrink: 0; font-size: 0.75rem; }
 
-/* Navigation Logic */
+/* View Management */
 .view-section { display: none; }
 .view-section.active { display: block; animation: fadeIn 0.4s ease-out; }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-/* Checklist specific styles */
+/* Audit Checklist styles */
 .audit-item { border-left: 4px solid #334155; transition: all 0.2s; }
 .audit-item:hover { border-left-color: #06b6d4; background: rgba(6, 182, 212, 0.05); }
 .audit-checkbox { appearance: none; width: 1.25rem; height: 1.25rem; border: 2px solid #334155; border-radius: 4px; background: #0f172a; cursor: pointer; position: relative; }
 .audit-checkbox:checked { background: #06b6d4; border-color: #06b6d4; }
 .audit-checkbox:checked::after { content: '✓'; color: white; position: absolute; top: -2px; left: 3px; font-size: 0.8rem; }
+
+/* Force Plotly Modebar to Bottom */
+.modebar-container { top: auto !important; bottom: 0 !important; }
 
 /* Modal for Risk Register */
 #riskModal { display: none; position: fixed; inset: 0; background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(8px); z-index: 100; align-items: center; justify-content: center; padding: 1.5rem; }
@@ -68,9 +71,9 @@ body { background-color: #0f172a; color: #f8fafc; font-family: 'Inter', sans-ser
 <div class="text-xl font-bold text-neonblue tracking-tight uppercase italic">Provenance<span class="text-textlight">Watch</span> 2026</div>
 </div>
 <div class="flex space-x-6 text-[10px] font-black uppercase tracking-widest text-textdim">
-<button onclick="showView('home')" class="hover:text-neonblue transition">Home</button>
-<button onclick="showView('intelligence')" class="hover:text-neonblue transition">Forensic Intelligence</button>
-<button onclick="showView('checklist')" class="hover:text-neonblue transition">Audit Checklist</button>
+<button onclick="showView('home')" class="hover:text-neonblue transition px-2">Home</button>
+<button onclick="showView('intelligence')" class="hover:text-neonblue transition px-2">Forensic Intelligence</button>
+<button onclick="showView('checklist')" class="hover:text-neonblue transition px-2">Audit Checklist</button>
 </div>
 </div>
 </nav>
@@ -82,29 +85,29 @@ body { background-color: #0f172a; color: #f8fafc; font-family: 'Inter', sans-ser
 Media Supply Chain <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-neonblue to-electricpink">Trust & Integrity Portal</span>
 </h1>
 <p class="text-xl text-textdim mb-12 max-w-2xl mx-auto">
-Integrated command center for content provenance forensic analysis and technical asset auditing.
+Command center for forensic content analysis and <strong>"Verify, then Trust"</strong> technical asset auditing.
 </p>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 <div onclick="showView('intelligence')" class="group cursor-pointer bg-cardbg p-10 rounded-2xl border border-gray-800 hover:border-neonblue transition duration-300 card-elevation text-left">
 <div class="text-3xl mb-4">🔍</div>
 <h3 class="text-2xl font-bold text-neonblue mb-2 uppercase tracking-tight group-hover:translate-x-2 transition-transform">Forensic Risk Intelligence</h3>
-<p class="text-textdim text-sm leading-relaxed">Analyze the 2026 risk landscape, explore the Priority Matrix, and deep-dive into the Comprehensive Risk Register.</p>
+<p class="text-textdim text-sm leading-relaxed">Strategic analysis of the 2026 landscape, including the interactive Priority Matrix and Comprehensive Risk Register.</p>
 </div>
 <div onclick="showView('checklist')" class="group cursor-pointer bg-cardbg p-10 rounded-2xl border border-gray-800 hover:border-electricpink transition duration-300 card-elevation text-left">
 <div class="text-3xl mb-4">📋</div>
 <h3 class="text-2xl font-bold text-electricpink mb-2 uppercase tracking-tight group-hover:translate-x-2 transition-transform">Audit Checklist</h3>
-<p class="text-textdim text-sm leading-relaxed">Interactive technical audit guide for Media Librarians. Step-by-step verification protocols for C2PA signed assets.</p>
+<p class="text-textdim text-sm leading-relaxed">Actionable technical guide for verification of C2PA signed assets. Step-by-step protocols for Media Librarians.</p>
 </div>
 </div>
 </div>
 </section>
 
-<!-- VIEW: FORENSIC RISK INTELLIGENCE (EXISTING CONTENT) -->
+<!-- VIEW: FORENSIC RISK INTELLIGENCE -->
 <section id="view-intelligence" class="view-section px-4 sm:px-6 lg:px-8 py-12">
 <main class="max-w-7xl mx-auto">
 <header class="mb-20 text-center">
 <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight">Forensic Risk Intelligence</h1>
-<p class="text-lg text-textdim max-w-2xl mx-auto italic">Strategic analysis of end-to-end supply chain vulnerabilities.</p>
+<p class="text-lg text-textdim max-w-2xl mx-auto italic">Strategic end-to-end vulnerability analysis for professional media.</p>
 </header>
 
 <section id="overview" class="mb-24">
@@ -112,7 +115,7 @@ Integrated command center for content provenance forensic analysis and technical
 <div class="lg:col-span-2 bg-cardbg p-8 rounded-2xl card-elevation border-t-4 border-neonblue">
 <h2 class="text-2xl font-bold mb-4 text-neonblue">Strategic Context</h2>
 <p class="text-textdim leading-relaxed mb-6 text-sm">
-As generative AI achieves photorealistic parity, the 2026 media landscape relies on <strong>C2PA v2.4</strong> as the primary trust mechanism. However, cryptographic signatures are not a panacea. Our audit identifies 15 distinct vulnerabilities—most critically at the hardware/sensor interface—that could allow "laundered" synthetic content to appear cryptographically authentic.
+As photorealistic synthetic media scales, the 2026 landscape relies on <strong>C2PA v2.4</strong> as the primary trust mechanism. However, a valid signature is no longer a guarantee of truth. Our audit identifies 15 vulnerabilities requiring a <strong>"Verify, then Trust"</strong> validation model.
 </p>
 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
 <div class="p-4 bg-bgbase rounded-xl border border-gray-800 text-center">
@@ -127,17 +130,17 @@ As generative AI achieves photorealistic parity, the 2026 media landscape relies
 <div class="text-2xl font-bold text-alertorange">7.8</div>
 <div class="text-[10px] uppercase text-gray-500 font-bold mt-1">Avg Severity</div>
 </div>
-<div class="p-4 bg-bgbase rounded-xl border border-gray-800 text-center">
-<div class="text-2xl font-bold text-neonblue">69%</div>
-<div class="text-[10px] uppercase text-gray-500 font-bold mt-1">Detection Efficacy</div>
+<div class="p-4 bg-bgbase rounded-xl border border-gray-800 text-center text-neonblue">
+<div class="text-2xl font-bold italic">VtT</div>
+<div class="text-[10px] uppercase text-gray-500 font-bold mt-1">Audit Model</div>
 </div>
 </div>
 </div>
 <div class="bg-cardbg p-8 rounded-2xl border-t-4 border-alertorange flex flex-col justify-between">
 <div>
-<h3 class="text-xl font-bold mb-2 text-alertorange">Critical Alert: R4</h3>
-<div class="text-xs font-bold text-textlight mb-2 uppercase">Hardware Injection</div>
-<p class="text-[11px] text-textdim mb-4 leading-relaxed">Adversaries feeding synthetic data directly into the camera's TEE to generate "valid" provenance on fake images. This represents a foundational break in the "optical reality" chain.</p>
+<h3 class="text-xl font-bold mb-2 text-alertorange uppercase tracking-widest">Critical Alert: R4</h3>
+<p class="text-[11px] text-textdim mb-4 italic text-center border-b border-gray-800 pb-2">"Mathematical perfection does not equal optical reality."</p>
+<p class="text-[11px] text-textdim leading-relaxed">Hardware Injection remains the most significant threat to first-mile trust, allowing synthetic data to bypass camera TEE protections.</p>
 </div>
 <div class="p-3 bg-bgbase rounded-lg border border-alertorange/30 text-center">
 <div class="text-[9px] text-alertorange font-bold uppercase mb-2">Mitigation Readiness: LOW</div>
@@ -150,8 +153,9 @@ As generative AI achieves photorealistic parity, the 2026 media landscape relies
 </section>
 
 <section id="swot" class="mb-24">
-<div class="mb-10">
-<h2 class="text-3xl font-bold mb-4 border-l-4 border-neonblue pl-4">Ecosystem SWOT Analysis</h2>
+<div class="mb-10 text-center">
+<h2 class="text-3xl font-bold mb-4 uppercase tracking-tighter">Ecosystem SWOT Analysis</h2>
+<p class="text-textdim max-w-3xl mx-auto text-sm italic">C2PA Standard Implementation vs. Distribution Realities.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 <div class="bg-cardbg p-6 rounded-xl border border-gray-800 card-elevation hover:border-neonblue transition duration-300">
@@ -160,7 +164,7 @@ As generative AI achieves photorealistic parity, the 2026 media landscape relies
 <h3 class="text-xl font-bold text-neonblue uppercase tracking-tighter">Strengths</h3>
 </div>
 <ul class="list-disc list-inside text-textdim space-y-2 text-xs">
-<li>Hardware-backed signing via Trusted Execution Environments.</li>
+<li>Hardware-backed signing (Sony/Leica TEE).</li>
 <li>Additive manifest model (auditable history).</li>
 <li>Standardized metadata (C2PA v2.4, JUMBF).</li>
 <li>TDM assertions for IP protection.</li>
@@ -186,7 +190,7 @@ As generative AI achieves photorealistic parity, the 2026 media landscape relies
 <ul class="list-disc list-inside text-textdim space-y-2 text-xs">
 <li>EU AI Act (Article 50) driving mandatory compliance.</li>
 <li>RFC 3161 Trusted Timestamping integration.</li>
-<li>Shift toward "Zero-Trust" validation workflows.</li>
+<li>Shift toward <strong>"Verify, then Trust"</strong> workflows.</li>
 <li>Monetization of "authenticated" content streams.</li>
 </ul>
 </div>
@@ -197,9 +201,9 @@ As generative AI achieves photorealistic parity, the 2026 media landscape relies
 </div>
 <ul class="list-disc list-inside text-textdim space-y-2 text-xs">
 <li>Adversarial AI natively ignoring C2PA signals.</li>
-<li>"Laundering" synthetic content via re-signing pipelines.</li>
-<li>Severe degradation of traditional AI detection accuracy.</li>
-<li>Legal liability for possessing "untrusted" archival content.</li>
+<li>"Laundering" synthetic content via re-signing.</li>
+<li>Severe degradation of traditional AI detection.</li>
+<li>Legal liability for "untrusted" archival content.</li>
 </ul>
 </div>
 </div>
@@ -215,13 +219,36 @@ As generative AI achieves photorealistic parity, the 2026 media landscape relies
 </div>
 </div>
 <div class="space-y-4">
-<div class="p-6 bg-cardbg rounded-xl border border-gray-800">
-<h4 class="text-xs font-bold text-textlight mb-2 uppercase tracking-widest underline decoration-neonblue decoration-2 underline-offset-4">Core Drivers</h4>
-<p class="text-[11px] text-textdim leading-relaxed">Securing media provenance is no longer solely an IT issue; it requires cross-departmental strategy involving legal, editorial, and executive leadership.</p>
-</div>
-<div class="p-6 bg-cardbg rounded-xl border border-gray-800">
-<h4 class="text-xs font-bold text-textlight mb-2 uppercase tracking-widest underline decoration-alertorange decoration-2 underline-offset-4">Vulnerability Focus</h4>
-<p class="text-[11px] text-textdim leading-relaxed">Integration complexity remains the #1 project risk, leading to "Unsigned Ingredient" warnings that paralyze fast-cycle news distribution.</p>
+<div class="p-8 bg-cardbg rounded-xl border border-gray-800 card-elevation">
+<h4 class="text-sm font-bold text-neonblue mb-6 uppercase tracking-widest flex items-center gap-2">
+<span>💡</span> Strategic Key Takeaways
+</h4>
+<ul class="space-y-6">
+<li class="flex items-start gap-3">
+<div class="w-1.5 h-1.5 bg-neonblue rounded-full mt-2 shrink-0"></div>
+<p class="text-[11px] text-textdim leading-relaxed">
+<strong class="text-textlight">Impact Core</strong>: Hardware Injection (R4) and Temporal Manipulation (R3) represent the most impactful risks. They allow for the creation of "mathematically perfect" fraudulent signatures.
+</p>
+</li>
+<li class="flex items-start gap-3">
+<div class="w-1.5 h-1.5 bg-neonblue rounded-full mt-2 shrink-0"></div>
+<p class="text-[11px] text-textdim leading-relaxed">
+<strong class="text-textlight">Deadlines</strong>: The approaching August 2026 EU AI Act compliance milestones are rapidly increasing Financial and Compliance risks for organizations lacking automated disclosure workflows.
+</p>
+</li>
+<li class="flex items-start gap-3">
+<div class="w-1.5 h-1.5 bg-neonblue rounded-full mt-2 shrink-0"></div>
+<p class="text-[11px] text-textdim leading-relaxed">
+<strong class="text-textlight">Complex Projects</strong>: Ingredient Graph reconstruction (R14) is identified as the most complex project risk, requiring seamless integration across multi-vendor software suites.
+</p>
+</li>
+<li class="flex items-start gap-3">
+<div class="w-1.5 h-1.5 bg-neonblue rounded-full mt-2 shrink-0"></div>
+<p class="text-[11px] text-textdim leading-relaxed">
+<strong class="text-textlight">Adversarial AI</strong>: As an external risk, Adversarial AI (R11) is evolving to explicitly strip synthetic signatures, making "Verify, then Trust" metadata audits mandatory.
+</p>
+</li>
+</ul>
 </div>
 </div>
 </section>
@@ -234,7 +261,7 @@ As generative AI achieves photorealistic parity, the 2026 media landscape relies
 <div class="flow-box">
 <div class="text-2xl mb-2">📷</div>
 <div class="font-bold text-neonblue text-xs uppercase tracking-widest">1. Capture</div>
-<div class="flow-threat">Exploit: TEE Injection</div>
+<div class="flow-threat text-[10px]">Exploit: TEE Injection</div>
 </div>
 </div>
 <div class="flow-arrow">➔</div>
@@ -242,7 +269,7 @@ As generative AI achieves photorealistic parity, the 2026 media landscape relies
 <div class="flow-box">
 <div class="text-2xl mb-2">🖥️</div>
 <div class="font-bold text-neonblue text-xs uppercase tracking-widest">2. Edit</div>
-<div class="flow-threat">Exploit: Broken Chain</div>
+<div class="flow-threat text-[10px]">Exploit: Broken Chain</div>
 </div>
 </div>
 <div class="flow-arrow">➔</div>
@@ -250,7 +277,7 @@ As generative AI achieves photorealistic parity, the 2026 media landscape relies
 <div class="flow-box">
 <div class="text-2xl mb-2">☁️</div>
 <div class="font-bold text-neonblue text-xs uppercase tracking-widest">3. Distribute</div>
-<div class="flow-threat">Exploit: Manifest Strip</div>
+<div class="flow-threat text-[10px]">Exploit: Manifest Strip</div>
 </div>
 </div>
 <div class="flow-arrow">➔</div>
@@ -258,7 +285,7 @@ As generative AI achieves photorealistic parity, the 2026 media landscape relies
 <div class="flow-box">
 <div class="text-2xl mb-2">🕵️</div>
 <div class="font-bold text-neonblue text-xs uppercase tracking-widest">4. Verify</div>
-<div class="flow-threat">Exploit: Time Spoof</div>
+<div class="flow-threat text-[10px]">Exploit: Time Spoof</div>
 </div>
 </div>
 </div>
@@ -269,7 +296,7 @@ As generative AI achieves photorealistic parity, the 2026 media landscape relies
 <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
 <div>
 <h2 class="text-3xl font-bold border-l-4 border-alertorange pl-4 uppercase tracking-tight">Priority Matrix</h2>
-<p class="text-textdim text-xs mt-1">Likelihood (X) vs Impact (Y). Use the mouse wheel to zoom in on overlapping points.</p>
+<p class="text-textdim text-xs mt-1">Vermont-Scale Analysis: Impact vs. Likelihood (1-10). Hover for VtT insights.</p>
 </div>
 <button onclick="toggleModal()" class="px-5 py-2.5 bg-neonblue/10 border border-neonblue text-neonblue text-[11px] font-black uppercase tracking-widest rounded-lg hover:bg-neonblue hover:text-bgbase transition duration-300 card-elevation">
 Access Detailed Risk Register &#10142;
@@ -277,6 +304,54 @@ Access Detailed Risk Register &#10142;
 </div>
 <div class="bg-cardbg p-4 rounded-2xl border border-gray-800">
 <div id="plotlyScatter" style="width:100%; height:550px;"></div>
+</div>
+</section>
+
+<section id="strategy-intelligence" class="mb-24">
+<div class="mb-10">
+<h2 class="text-3xl font-bold mb-4 border-l-4 border-electricpink pl-4 uppercase tracking-tighter">Recommended Validation Strategy</h2>
+<p class="text-textdim max-w-4xl text-sm mb-8">
+Implementing a <strong>"Verify, then Trust"</strong> validation workflow is essential. A valid signature is merely the first step; it must be coupled with rigorous technical audits.
+</p>
+</div>
+<div class="bg-cardbg p-8 rounded-xl border border-gray-800 card-elevation">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex items-start bg-bgbase p-5 rounded-lg border border-gray-700 audit-item">
+<div class="step-dot">1</div>
+<div>
+<h4 class="font-bold text-neonblue text-[11px] uppercase mb-1 tracking-widest">Signature Check</h4>
+<p class="text-[10px] text-textdim leading-relaxed">Verify if the X.509 certificate is mathematically valid and originates from an entity on the 2026 Global Trust List.</p>
+</div>
+</div>
+<div class="flex items-start bg-bgbase p-5 rounded-lg border border-gray-700 audit-item">
+<div class="step-dot">2</div>
+<div>
+<h4 class="font-bold text-neonblue text-[11px] uppercase mb-1 tracking-widest">Revocation Check</h4>
+<p class="text-[10px] text-textdim leading-relaxed">Perform real-time checks to ensure the signer's certificate has not been compromised or revoked (addressing R9).</p>
+</div>
+</div>
+<div class="flex items-start bg-bgbase p-5 rounded-lg border border-gray-700 audit-item">
+<div class="step-dot">3</div>
+<div>
+<h4 class="font-bold text-neonblue text-[11px] uppercase mb-1 tracking-widest">Temporal Anchor Check</h4>
+<p class="text-[10px] text-textdim leading-relaxed">Confirm that the manifest hash is anchored by an RFC 3161 Trusted Timestamp Authority (TSA) to prevent timeline spoofing.</p>
+</div>
+</div>
+<div class="flex items-start bg-bgbase p-5 rounded-lg border border-gray-700 audit-item">
+<div class="step-dot">4</div>
+<div>
+<h4 class="font-bold text-neonblue text-[11px] uppercase mb-1 tracking-widest">Ingredient Graph Audit</h4>
+<p class="text-[10px] text-textdim leading-relaxed">Scan the additive history for "unsigned gaps" or "redacted parents" that indicate a break in the provenance chain.</p>
+</div>
+</div>
+<div class="flex items-start bg-bgbase p-5 rounded-lg border border-gray-700 md:col-span-2 audit-item">
+<div class="step-dot" style="background:#ec4899">5</div>
+<div>
+<h4 class="font-bold text-electricpink text-[11px] uppercase mb-1 tracking-widest">Physical Reality Check (VtT Audit)</h4>
+<p class="text-[10px] text-textdim leading-relaxed">Do not blindly trust signatures. Cross-reference shadow vectors and Noise Pattern Analysis (NPA) uniformly against metadata.</p>
+</div>
+</div>
+</div>
 </div>
 </section>
 </main>
@@ -287,11 +362,10 @@ Access Detailed Risk Register &#10142;
 <main class="max-w-4xl mx-auto">
 <header class="mb-12 text-center">
 <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight uppercase tracking-tight">Technical Audit Checklist</h1>
-<p class="text-lg text-textdim max-w-2xl mx-auto">Forensic verification protocols for Media Librarians and Integrity Auditors.</p>
+<p class="text-lg text-textdim max-w-2xl mx-auto">Forensic verification protocols for <strong>"Verify, then Trust"</strong> (VtT) assessment.</p>
 </header>
-
 <div class="space-y-12">
-<!-- Category 1 -->
+<!-- Checklist Content Restored -->
 <div class="bg-cardbg p-8 rounded-2xl border border-gray-800 card-elevation">
 <h3 class="text-xl font-bold text-neonblue mb-6 uppercase tracking-widest flex items-center gap-2">
 <span class="text-2xl">🔐</span> 1. Foundational Integrity & Signature Audit
@@ -299,29 +373,18 @@ Access Detailed Risk Register &#10142;
 <div class="space-y-4">
 <div class="audit-item p-4 flex gap-4 items-start">
 <input type="checkbox" class="audit-checkbox mt-1">
-<div>
-<h4 class="font-bold text-textlight">X.509 Certificate Validation</h4>
-<p class="text-xs text-textdim">Verify the leaf certificate originates from a certified CA on the 2026 C2PA Trust List (DigiCert, SSL.com, etc.).</p>
-</div>
+<div><h4 class="font-bold text-textlight">X.509 Certificate Validation</h4><p class="text-xs text-textdim">Verify leaf certificate originates from a certified CA on the 2026 C2PA Trust List (DigiCert, SSL.com, etc.).</p></div>
 </div>
 <div class="audit-item p-4 flex gap-4 items-start">
 <input type="checkbox" class="audit-checkbox mt-1">
-<div>
-<h4 class="font-bold text-textlight">Real-Time Revocation Check (OCSP)</h4>
-<p class="text-xs text-textdim">Perform a live OCSP lookup to ensure signing hardware keys haven't been compromised or revoked (Ref: Nikon Z6 III incident).</p>
-</div>
+<div><h4 class="font-bold text-textlight">Real-Time Revocation Check (OCSP)</h4><p class="text-xs text-textdim">Perform a live OCSP lookup to ensure signing hardware keys haven't been compromised or revoked.</p></div>
 </div>
 <div class="audit-item p-4 flex gap-4 items-start">
 <input type="checkbox" class="audit-checkbox mt-1">
-<div>
-<h4 class="font-bold text-textlight">Content Binding Verification</h4>
-<p class="text-xs text-textdim">Recalculate bit-level SHA-256/384 hashes for RAW or high-res assets to ensure zero-tolerance integrity for archival masters.</p>
+<div><h4 class="font-bold text-textlight">Content Binding Verification</h4><p class="text-xs text-textdim">Recalculate bit-level SHA-256/384 hashes for assets to ensure zero-tolerance integrity for archival masters.</p></div>
 </div>
 </div>
 </div>
-</div>
-
-<!-- Category 2 -->
 <div class="bg-cardbg p-8 rounded-2xl border border-gray-800 card-elevation">
 <h3 class="text-xl font-bold text-alertorange mb-6 uppercase tracking-widest flex items-center gap-2">
 <span class="text-2xl">⏳</span> 2. Temporal & Freshness Audit
@@ -329,29 +392,18 @@ Access Detailed Risk Register &#10142;
 <div class="space-y-4">
 <div class="audit-item p-4 flex gap-4 items-start">
 <input type="checkbox" class="audit-checkbox mt-1">
-<div>
-<h4 class="font-bold text-textlight">RFC 3161 TSA Token Check</h4>
-<p class="text-xs text-textdim">Confirm manifest hash is anchored by an external Time-Stamp Authority. Verify TSA signature against independent root.</p>
-</div>
+<div><h4 class="font-bold text-textlight">RFC 3161 TSA Token Check</h4><p class="text-xs text-textdim">Confirm manifest hash is anchored by an external Time-Stamp Authority.</p></div>
 </div>
 <div class="audit-item p-4 flex gap-4 items-start">
 <input type="checkbox" class="audit-checkbox mt-1">
-<div>
-<h4 class="font-bold text-textlight">Attestation Freshness Check</h4>
-<p class="text-xs text-textdim">Verify Presence of nonces in attestation tokens to prevent replayed sessions (Ref: Fake Meeting Attack case study).</p>
-</div>
+<div><h4 class="font-bold text-textlight">Attestation Freshness Check (Nonces)</h4><p class="text-xs text-textdim">Verify presence of nonces in attestation tokens to prevent replayed sessions.</p></div>
 </div>
 <div class="audit-item p-4 flex gap-4 items-start">
 <input type="checkbox" class="audit-checkbox mt-1">
-<div>
-<h4 class="font-bold text-textlight">Cryptographic Chaining Consistency</h4>
-<p class="text-xs text-textdim">Inspect relative ordering in VAP framework; ensure each entry includes the hash of the preceding manifest.</p>
+<div><h4 class="font-bold text-textlight">Cryptographic Chaining Consistency</h4><p class="text-xs text-textdim">Inspect relative ordering in VAP framework; ensure each entry includes the hash of the preceding manifest.</p></div>
 </div>
 </div>
 </div>
-</div>
-
-<!-- Category 3 -->
 <div class="bg-cardbg p-8 rounded-2xl border border-gray-800 card-elevation">
 <h3 class="text-xl font-bold text-electricpink mb-6 uppercase tracking-widest flex items-center gap-2">
 <span class="text-2xl">🌿</span> 3. Ingredient Graph & Lineage Audit
@@ -359,59 +411,30 @@ Access Detailed Risk Register &#10142;
 <div class="space-y-4">
 <div class="audit-item p-4 flex gap-4 items-start">
 <input type="checkbox" class="audit-checkbox mt-1">
-<div>
-<h4 class="font-bold text-textlight">Redaction Verification (V3 Spec)</h4>
-<p class="text-xs text-textdim">Ensure hash-links to original ingredients remain verifiable even if metadata (GPS/Photographer ID) has been redacted.</p>
-</div>
+<div><h4 class="font-bold text-textlight">Redaction Verification (V3 Spec)</h4><p class="text-xs text-textdim">Ensure hash-links to original ingredients remain verifiable even if metadata has been redacted.</p></div>
 </div>
 <div class="audit-item p-4 flex gap-4 items-start">
 <input type="checkbox" class="audit-checkbox mt-1">
-<div>
-<h4 class="font-bold text-textlight">"Unsigned Gap" Detection</h4>
-<p class="text-xs text-textdim">Identify ingredients entering the pipeline without C2PA signatures. Flag assets containing unverified source components.</p>
-</div>
-</div>
-<div class="audit-item p-4 flex gap-4 items-start">
-<input type="checkbox" class="audit-checkbox mt-1">
-<div>
-<h4 class="font-bold text-textlight">CAWG TDM Flag Compliance</h4>
-<p class="text-xs text-textdim">Audit rights assertions; ensure "notAllowed" flags for AI training are explicitly embedded for IP protection.</p>
+<div><h4 class="font-bold text-textlight">"Unsigned Gap" Detection</h4><p class="text-xs text-textdim">Identify ingredients entering the pipeline without C2PA signatures and flag assets.</p></div>
 </div>
 </div>
 </div>
-</div>
-
-<!-- Category 4 -->
 <div class="bg-cardbg p-8 rounded-2xl border border-gray-800 card-elevation">
 <h3 class="text-xl font-bold text-neonblue mb-6 uppercase tracking-widest flex items-center gap-2">
-<span class="text-2xl">👁️</span> 4. Visual-Metadata Reality Audit (Zero-Trust)
+<span class="text-2xl">👁️</span> 4. Visual-Metadata Reality Audit (VtT)
 </h3>
 <div class="space-y-4">
 <div class="audit-item p-4 flex gap-4 items-start">
 <input type="checkbox" class="audit-checkbox mt-1">
-<div>
-<h4 class="font-bold text-textlight">Shadow Vector Analysis</h4>
-<p class="text-xs text-textdim">Confirm geometric shadow convergence matches claimed metadata (GPS/Time). Reject if sun position is inconsistent with vectors.</p>
-</div>
+<div><h4 class="font-bold text-textlight">Shadow Vector Analysis</h4><p class="text-xs text-textdim">Confirm geometric shadow convergence matches claimed metadata (GPS/Time).</p></div>
 </div>
 <div class="audit-item p-4 flex gap-4 items-start">
 <input type="checkbox" class="audit-checkbox mt-1">
-<div>
-<h4 class="font-bold text-textlight">Noise Pattern Analysis (NPA)</h4>
-<p class="text-xs text-textdim">Verify stochastic noise signature (PRNU) is uniform across the entire frame. Low-noise patches indicate localized synthetic insertion.</p>
-</div>
-</div>
-<div class="audit-item p-4 flex gap-4 items-start">
-<input type="checkbox" class="audit-checkbox mt-1">
-<div>
-<h4 class="font-bold text-textlight">Sony/Hardware Depth Map Check</h4>
-<p class="text-xs text-textdim">For supported devices, verify 3D depth map consistency to ensure the subject wasn't a 2D projection on a high-res monitor.</p>
+<div><h4 class="font-bold text-textlight">Noise Pattern Analysis (NPA)</h4><p class="text-xs text-textdim">Verify stochastic noise signature (PRNU) is uniform across the entire frame.</p></div>
 </div>
 </div>
 </div>
 </div>
-</div>
-
 <div class="mt-12 p-8 bg-neonblue/10 border border-neonblue/30 rounded-xl text-center">
 <p class="text-sm font-bold text-neonblue uppercase tracking-widest">End of Audit Protocol</p>
 <button onclick="window.print()" class="mt-4 px-6 py-2 bg-neonblue text-bgbase font-bold text-xs rounded uppercase hover:opacity-90 transition">Print PDF Report</button>
@@ -456,32 +479,37 @@ Access Detailed Risk Register &#10142;
 
 <script>
 const RISK_DATA = [
-{ id: "R1", cat: "Strategic", desc: "Obsolescence of Legacy Content: Shift to C2PA as trust currency renders unsigned archives less credible.", impact: "Loss of competitive edge; content rejected by platforms.", mit: "Implement retrospective 'Edit' manifests for verified historical assets." },
-{ id: "R2", cat: "Strategic", desc: "Fragmented Trust Tiering: Reliance on frozen ITL vs new 2026 global standard.", impact: "Inconsistent verification; 'Low Trust' flags on valid content.", mit: "Migrate to 2026 C2PA Conformance Programme certified CAs." },
-{ id: "R3", cat: "Operational", desc: "Temporal Manipulation: Attackers stripping/modifying timestamps.", impact: "Forensic timeline failure; loss of integrity.", mit: "Mandatory integration of RFC 3161 TSA & chaining." },
-{ id: "R4", cat: "Operational", desc: "Hardware Injection (Nikon): Malicious AI input into TEE signing pipeline.", impact: "Valid hardware signatures on synthetic content.", mit: "Input validation in TEE; secure sensor pipeline auth." },
-{ id: "R5", cat: "Operational", desc: "Metadata Stripping: Social media/CDNs stripping manifests.", impact: "Loss of provenance chain; reliance on weak soft bindings.", mit: "Cloud manifest recovery architecture via perceptual hash." },
-{ id: "R6", cat: "Financial", desc: "Asset Devaluation (TDM): AI scrapers ignoring 'notAllowed' flags.", impact: "Loss of licensing revenue; unauthorized training on IP.", mit: "CAWG TDM assertions as legal evidence for litigation." },
-{ id: "R7", cat: "Financial", desc: "Compliance Costs: fleet upgrade requirements for Sony/Leica devices.", impact: "CapEx strain; digital divide between news organizations.", mit: "Tiered ingest strategy prioritizing high-risk conflict zones." },
-{ id: "R8", cat: "Compliance", desc: "EU AI Act Violations: Failure to disclose AI generation (Art 50).", impact: "Regulatory fines; forced market removals.", mit: "Automated ingest checks triggering AI Assertion manifests." },
-{ id: "R9", cat: "Compliance", desc: "Revocation Blindness: Validation tools failing to check OCSP.", impact: "Accepting content signed by compromised/revoked hardware keys.", mit: "Validators configured for mandatory real-time OCSP checks." },
-{ id: "R10", cat: "Reputational", desc: "Fake Meeting Attack: AI video used to impersonate leadership.", impact: "Loss of organizational trust; successful social engineering.", mit: "Freshness checks using nonces in attestation tokens." },
-{ id: "R11", cat: "External", desc: "Adversarial AI Evolution: Models designed to leave no synthetic signatures.", impact: "Detection efficacy degradation (down to 69%); dark AI growth.", mit: "Hybrid validation: C2PA crypto + physical reality audits." },
-{ id: "R12", cat: "ESG", desc: "Information Integrity (Social): Proliferation of propaganda gaps.", impact: "Social instability; inability to distinguish optical reality.", mit: "Prioritize first-mile trust for field journalists." },
-{ id: "R13", cat: "ESG", desc: "Inclusion/Bias in AI Tools: AI used creating harmful representations.", impact: "Ethical breaches; public backlash against synthetic diversity.", mit: "Transparent disclosure of prompts/models in manifest." },
-{ id: "R14", cat: "Project", desc: "Integration Complexity: Failure to reconstruct Ingredient Graph.", impact: "Broken provenance chains; production delays.", mit: "Standardize on C2PA v3 for robust redaction handling." },
-{ id: "R15", cat: "Project", desc: "Validation Latency: Forensic checks slowing down news publishing.", impact: "Missed breaking news windows; operational bottlenecks.", mit: "Automated triage: Signatures for low-risk, Forensics for high-risk." }
+{ id: "R1", cat: "Strategic", desc: "Obsolescence of Legacy Content: Shift to C2PA trust currency renders unsigned archives less credible.", impact: "Loss of competitive edge; content rejected by platforms.", mit: "Implement retrospective 'Edit' manifests for verified historical assets." },
+{ id: "R2", cat: "Strategic", desc: "Trust Fragmentation: Reliance on frozen ITL vs. 2026 global standard.", impact: "Inconsistent verification results.", mit: "Migrate to 2026 C2PA Conformance Programme." },
+{ id: "R3", cat: "Operational", desc: "Temporal Manipulation: Attackers stripping/modifying timestamps.", impact: "Forensic timeline failure; loss of reporting integrity.", mit: "Integration of RFC 3161 Trusted Timestamping (TSA)." },
+{ id: "R4", cat: "Operational", desc: "Hardware Injection: Malicious AI input into TEE signing pipeline.", impact: "Valid hardware signatures on synthetic content.", mit: "Input validation in Device TEE; secure sensory pipeline auth." },
+{ id: "R5", cat: "Operational", desc: "Metadata Stripping: CDNs stripping manifests during distribution.", impact: "Loss of provenance chain; reliance on weak soft bindings.", mit: "Three-pillar architecture: Cloud manifest recovery via perceptual hash." },
+{ id: "R6", cat: "Financial", desc: "Asset Devaluation: AI scrapers ignoring 'notAllowed' flags.", impact: "Loss of licensing revenue; unauthorized model training.", mit: "Use CAWG TDM assertions as technical evidence for litigation." },
+{ id: "R7", cat: "Financial", desc: "Compliance Costs: High cost of hardware fleet upgrades.", impact: "CapEx strain; digital trust divide.", mit: "Tiered ingest strategy for hardware-backed assets." },
+{ id: "R8", cat: "Compliance", desc: "EU AI Act Violations: Failure to disclose AI generation.", impact: "Heavy regulatory fines; forced market removal.", mit: "Automated ingest checks triggering AI Assertion manifests." },
+{ id: "R9", cat: "Compliance", desc: "Revocation Blindness: Tools failing to check live OCSP.", impact: "Accepting content signed by compromised/revoked keys.", mit: "Validators configured for mandatory real-time OCSP checks." },
+{ id: "R10", cat: "Reputational", desc: "Fake Meeting Attack: AI video used to impersonate leadership.", impact: "Loss of organizational trust.", mit: "Freshness checks using nonces in attestation tokens." },
+{ id: "R11", cat: "External", desc: "Adversarial AI Evolution: Models designed to leave no trace.", impact: "Forensic classifier degradation (down to 69%).", mit: "Hybrid validation: C2PA crypto + physical reality audits." },
+{ id: "R12", cat: "ESG", desc: "Social Misinfo: Proliferation of propaganda gaps.", impact: "Social instability; indistinguishable reality.", mit: "Prioritize first-mile trust for field journalists." },
+{ id: "R13", cat: "ESG", desc: "AI Tool Bias: AI creating harmful representations.", impact: "Ethical breaches; public backlash.", mit: "Transparent disclosure of prompts/models in manifest." },
+{ id: "R14", cat: "Project", desc: "Integration Complexity: Failure to reconstruct Ingredient Graph.", impact: "Broken provenance chains; production delays.", mit: "Standardize on C2PA v3 for redaction handling." },
+{ id: "R15", cat: "Project", desc: "Validation Latency: Forensic checks slowing publishing.", impact: "Missed news windows; bottlenecks.", mit: "Automated triage: Signatures for low-risk, Forensics for high-risk." }
 ];
 
 function showView(viewId) {
     document.querySelectorAll('.view-section').forEach(s => s.classList.remove('active'));
     document.getElementById(`view-${viewId}`).classList.add('active');
     window.scrollTo(0, 0);
+    // Relayout plotly specifically when showing intelligence view
+    if(viewId === 'intelligence') {
+        setTimeout(() => {
+            Plotly.Plots.resize(document.getElementById('plotlyScatter'));
+        }, 100);
+    }
 }
 
 function toggleModal() {
-    const modal = document.getElementById('riskModal');
-    modal.classList.toggle('active');
+    document.getElementById('riskModal').classList.toggle('active');
 }
 
 function wrapLabel(label) {
@@ -501,31 +529,12 @@ if(currentLine) lines.push(currentLine.trim());
 return lines;
 }
 
-const tooltipConfig = {
-plugins: {
-tooltip: {
-backgroundColor: '#0f172a',
-titleColor: '#06b6d4',
-bodyColor: '#cbd5e1',
-borderColor: '#1e293b',
-borderWidth: 1,
-callbacks: {
-title: function(tooltipItems) {
-const item = tooltipItems[0];
-let label = item.chart.data.labels[item.dataIndex];
-return Array.isArray(label) ? label.join(' ') : label;
-}
-}
-}
-}
-};
-
 window.onload = function() {
 const body = document.getElementById('riskTableBody');
 body.innerHTML = RISK_DATA.map(r => `
 <tr class="hover:bg-neonblue/5 transition">
 <td class="px-4 py-3 font-bold text-neonblue text-center border-r border-gray-800">${r.id}</td>
-<td class="px-4 py-3 uppercase tracking-tighter font-bold text-textdim">${r.cat}</td>
+<td class="px-4 py-3 uppercase tracking-tighter font-bold text-textdim text-[9px]">${r.cat}</td>
 <td class="px-4 py-3 font-semibold text-textlight">${r.desc}</td>
 <td class="px-4 py-3 text-textdim">${r.impact}</td>
 <td class="px-4 py-3 text-neonblue/90 font-medium italic">${r.mit}</td>
@@ -550,7 +559,17 @@ maintainAspectRatio: false,
 color: '#cbd5e1',
 plugins: {
 legend: { position: 'right', labels: { color: '#cbd5e1', font: { size: 9, weight: 'bold' } } },
-...tooltipConfig.plugins
+tooltip: {
+    backgroundColor: '#0f172a',
+    titleColor: '#06b6d4',
+    bodyColor: '#f8fafc',
+    callbacks: {
+        title: function(items) {
+            const label = items[0].chart.data.labels[items[0].dataIndex];
+            return Array.isArray(label) ? label.join(' ') : label;
+        }
+    }
+}
 },
 cutout: '75%'
 }
@@ -589,7 +608,7 @@ line: { color: '#0f172a', width: 2 }
 },
 hoverinfo: 'text',
 hoverlabel: { bgcolor: '#1e293b', bordercolor: '#334155', font: { family: 'Inter', color: '#f8fafc', size: 12 }, align: 'left' },
-hovertext: RISK_DATA.map(r => `<b>FORENSIC INSIGHT: ${r.id}</b><br><i>${r.desc.split(':')[0]}</i><br><br><b>IMPACT:</b> ${r.impact}<br><b>MITIGATION:</b> ${r.mit}`)
+hovertext: RISK_DATA.map(r => `<b>VtT INSIGHT: ${r.id}</b><br><i>${r.desc.split(':')[0]}</i><br><br><b>IMPACT:</b> ${r.impact}<br><b>MITIGATION:</b> ${r.mit}`)
 };
 
 const scatterLayout = {
@@ -597,11 +616,17 @@ paper_bgcolor: 'rgba(0,0,0,0)', plot_bgcolor: 'rgba(0,0,0,0)',
 font: { family: 'Inter', color: '#64748b' },
 xaxis: { title: 'Likelihood of Exploitation (1-10)', gridcolor: '#1e293b', range: [5.5, 10.5], zeroline: false },
 yaxis: { title: 'Severity of Impact (1-10)', gridcolor: '#1e293b', range: [5.5, 10.5], zeroline: false },
-margin: { l: 40, r: 20, t: 20, b: 40 },
+margin: { l: 40, r: 20, t: 20, b: 60 },
 hovermode: 'closest', dragmode: 'zoom'
 };
 
-Plotly.newPlot('plotlyScatter', [scatterData], scatterLayout, { displayModeBar: true, responsive: true });
+Plotly.newPlot('plotlyScatter', [scatterData], scatterLayout, { 
+    displayModeBar: true, 
+    responsive: true,
+    modeBarButtonsToRemove: ['lasso2d', 'select2d'],
+    displaylogo: false,
+    config: { modeBarButtonsToRemove: ['toImage', 'sendDataToCloud'], displayModeBar: true }
+});
 };
 </script>
 </body>
