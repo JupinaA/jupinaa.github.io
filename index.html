@@ -41,7 +41,7 @@ body { background-color: #0f172a; color: #f8fafc; font-family: 'Inter', sans-ser
 .flow-threat { border: 1px dashed #f97316; background-color: rgba(249, 115, 22, 0.1); color: #f97316; padding: 0.25rem; border-radius: 0.25rem; font-size: 0.75rem; margin-top: 0.5rem; }
 .step-dot { background: #ec4899; color: white; width: 1.5rem; height: 1.5rem; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: bold; margin-right: 0.75rem; flex-shrink: 0; font-size: 0.75rem; }
 
-/* Navigation & View Logic */
+/* Navigation Logic */
 .view-section { display: none; }
 .view-section.active { display: block; animation: fadeIn 0.4s ease-out; }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
@@ -99,17 +99,17 @@ Integrated command center for content provenance forensic analysis and <strong>V
 <div onclick="showView('intelligence')" class="group cursor-pointer bg-cardbg p-8 rounded-2xl border border-gray-800 hover:border-neonblue transition duration-300 card-elevation text-left">
 <div class="text-3xl mb-4">🔍</div>
 <h3 class="text-xl font-bold text-neonblue mb-2 uppercase tracking-tight group-hover:translate-x-1 transition-transform">Forensic Risk Intelligence</h3>
-<p class="text-textdim text-[11px] leading-relaxed">2026 Landscape audit, Priority Matrix, and Detailed Risk Register.</p>
+<p class="text-textdim text-[11px] leading-relaxed">Landscape audit, Priority Matrix, and Detailed Risk Register.</p>
 </div>
 <div onclick="showView('checklist')" class="group cursor-pointer bg-cardbg p-8 rounded-2xl border border-gray-800 hover:border-electricpink transition duration-300 card-elevation text-left">
 <div class="text-3xl mb-4">📋</div>
 <h3 class="text-xl font-bold text-electricpink mb-2 uppercase tracking-tight group-hover:translate-x-1 transition-transform">Audit Checklist</h3>
 <p class="text-textdim text-[11px] leading-relaxed">Technical guide for Media Librarians to conduct <strong>Vt²</strong> verification protocols.</p>
 </div>
-<div onclick="showView('eva')" class="group cursor-pointer bg-cardbg p-8 rounded-2xl border border-gray-800 hover:border-emerald-500 transition duration-300 card-elevation text-left text-left">
+<div onclick="showView('eva')" class="group cursor-pointer bg-cardbg p-8 rounded-2xl border border-gray-800 hover:border-emerald-500 transition duration-300 card-elevation text-left">
 <div class="text-3xl mb-4 text-emerald-500">💰</div>
 <h3 class="text-xl font-bold text-emerald-500 mb-2 uppercase tracking-tight group-hover:translate-x-1 transition-transform">Earned Value Analysis</h3>
-<p class="text-textdim text-[11px] leading-relaxed">Implementation ROI mapping and strategic sourcing for maximizing supply chain value.</p>
+<p class="text-textdim text-[11px] leading-relaxed">Implementation ROI mapping and strategic sourcing for maximizing value.</p>
 </div>
 <div class="opacity-50 bg-slate-900 p-8 rounded-2xl border border-gray-800 card-elevation text-left relative overflow-hidden cursor-not-allowed">
 <div class="absolute top-4 right-4 bg-gray-700 text-white text-[9px] font-bold px-2 py-1 rounded">Coming Soon!</div>
@@ -134,19 +134,19 @@ Integrated command center for content provenance forensic analysis and <strong>V
 <div class="lg:col-span-2 bg-cardbg p-8 rounded-2xl card-elevation border-t-4 border-neonblue">
 <h2 class="text-2xl font-bold mb-4 text-neonblue uppercase tracking-tight">Strategic Context</h2>
 <p class="text-textdim leading-relaxed mb-6 text-sm">
-As photorealistic synthetic media scales, the 2026 landscape relies on <strong>C2PA v2.4</strong> as the primary trust mechanism. However, a valid signature is no longer a guarantee of truth. Our audit identifies 20 vulnerabilities requiring a <strong>Vt²</strong> validation model.
+As photorealistic synthetic media scales, the 2026 landscape relies on <strong>C2PA v2.4</strong> as the core trust mechanism. However, a valid signature is no longer a guarantee of truth. Our audit identifies 21 vulnerabilities requiring a <strong>Vt²</strong> validation model.
 </p>
 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
 <div class="p-4 bg-bgbase rounded-xl border border-gray-800 text-center">
-<div class="text-2xl font-bold text-neonblue">20</div>
+<div class="text-2xl font-bold text-neonblue">21</div>
 <div class="text-[10px] uppercase text-gray-500 font-bold mt-1">Identified Risks</div>
 </div>
 <div class="p-4 bg-bgbase rounded-xl border border-gray-800 text-center">
 <div class="text-2xl font-bold text-electricpink">8</div>
 <div class="text-[10px] uppercase text-gray-500 font-bold mt-1">Categories</div>
 </div>
-<div class="p-4 bg-bgbase rounded-xl border border-gray-800 text-center text-alertorange">
-<div class="text-2xl font-bold">8.1</div>
+<div class="p-4 bg-bgbase rounded-xl border border-gray-800 text-center">
+<div class="text-2xl font-bold text-alertorange">8.2</div>
 <div class="text-[10px] uppercase text-gray-500 font-bold mt-1">Avg Severity</div>
 </div>
 <div class="p-4 bg-bgbase rounded-xl border border-gray-800 text-center text-neonblue">
@@ -157,13 +157,13 @@ As photorealistic synthetic media scales, the 2026 landscape relies on <strong>C
 </div>
 <div class="bg-cardbg p-8 rounded-2xl border-t-4 border-alertorange flex flex-col justify-between">
 <div>
-<h3 class="text-xl font-bold mb-2 text-alertorange uppercase tracking-widest text-center">Critical Alert: R4</h3>
-<p class="text-[11px] text-textdim mb-4 italic text-center border-b border-gray-800 pb-2">"Mathematical perfection does not equal optical reality."</p>
-<p class="text-[11px] text-textdim leading-relaxed">Hardware Injection remains the most significant threat to first-mile trust, allowing synthetic data to bypass camera TEE protections.</p>
+<h3 class="text-xl font-bold mb-2 text-alertorange uppercase tracking-widest text-center">Critical Alert: R21</h3>
+<p class="text-[11px] text-textdim mb-4 italic text-center border-b border-gray-800 pb-2">"Authenticated Fakes: The Integrity Clash."</p>
+<p class="text-[11px] text-textdim leading-relaxed">The <strong>Integrity Clash</strong> vulnerability allows an image to simultaneously prove human-origin (via metadata) and AI-origin (via pixels).</p>
 </div>
 <div class="p-3 bg-bgbase rounded-lg border border-alertorange/30 text-center">
 <div class="text-[9px] text-alertorange font-bold uppercase mb-2">Mitigation Readiness: LOW</div>
-<div class="w-full bg-gray-800 h-1 rounded-full"><div class="bg-alertorange h-full" style="width: 25%"></div></div>
+<div class="w-full bg-gray-800 h-1 rounded-full"><div class="bg-alertorange h-full" style="width: 15%"></div></div>
 </div>
 </div>
 </div>
@@ -203,10 +203,10 @@ As photorealistic synthetic media scales, the 2026 landscape relies on <strong>C
 <div class="p-8 bg-cardbg rounded-xl border border-gray-800 card-elevation">
 <h4 class="text-sm font-bold text-neonblue mb-6 uppercase tracking-widest flex items-center gap-2"><span>💡</span> Strategic Key Takeaways</h4>
 <ul class="space-y-6">
-<li class="flex items-start gap-3"><div class="w-1.5 h-1.5 bg-neonblue rounded-full mt-2 shrink-0"></div><p class="text-[11px] text-textdim leading-relaxed"><strong class="text-textlight">Priority Hazards</strong>: Hardware Injection (R4) and the Trust Model Loophole (R16) are the most impactful. They allow for "mathematically perfect" fakes that pass signature checks but fail veracity tests.</p></li>
-<li class="flex items-start gap-3"><div class="w-1.5 h-1.5 bg-neonblue rounded-full mt-2 shrink-0"></div><p class="text-[11px] text-textdim leading-relaxed"><strong class="text-textlight">The "Integrity Clash"</strong>: A major 2026 trend where assets carry valid C2PA signatures while pixel-level watermarks reveal AI origins, necessitating a multi-signal <strong>Vt²</strong> audit model.</p></li>
-<li class="flex items-start gap-3"><div class="w-1.5 h-1.5 bg-neonblue rounded-full mt-2 shrink-0"></div><p class="text-[11px] text-textdim leading-relaxed"><strong class="text-textlight">Complex Projects</strong>: Ingredient Graph reconstruction (R14) remains the most complex technical hurdle, creating "unsigned gaps" across multi-vendor MAM software.</p></li>
-<li class="flex items-start gap-3"><div class="w-1.5 h-1.5 bg-neonblue rounded-full mt-2 shrink-0"></div><p class="text-[11px] text-textdim leading-relaxed"><strong class="text-textlight">Adversarial Externalities</strong>: Adversarial AI (R11) rendering statistical forensics (ELA/NPA) increasingly secondary to <strong>Vt²</strong> metadata and durable credential audits.</p></li>
+<li class="flex items-start gap-3"><div class="w-1.5 h-1.5 bg-neonblue rounded-full mt-2 shrink-0"></div><p class="text-[11px] text-textdim leading-relaxed"><strong class="text-textlight">The Integrity Clash (R21)</strong>: A critical 2026 vulnerability where assets carry valid C2PA signatures but pixels carry AI watermarks (desynchronized provenance). Only a cross-layer audit protocol (Vt²) can detect these "authenticated fakes."</p></li>
+<li class="flex items-start gap-3"><div class="w-1.5 h-1.5 bg-neonblue rounded-full mt-2 shrink-0"></div><p class="text-[11px] text-textdim leading-relaxed"><strong class="text-textlight">Priority Hazards</strong>: Hardware Injection (R4) and the Trust Model Loophole (R16) remain the most impactful risks, allowing malicious actors to lend authoritative veneers to completely fabricated content.</p></li>
+<li class="flex items-start gap-3"><div class="w-1.5 h-1.5 bg-neonblue rounded-full mt-2 shrink-0"></div><p class="text-[11px] text-textdim leading-relaxed"><strong class="text-textlight">Compliance Latency</strong>: Looming August 2026 EU AI Act compliance dates are increasing Financial and ESG risks for organizations lacking automated disclosure workflows.</p></li>
+<li class="flex items-start gap-3"><div class="w-1.5 h-1.5 bg-neonblue rounded-full mt-2 shrink-0"></div><p class="text-[11px] text-textdim leading-relaxed"><strong class="text-textlight">Adversarial Externalities</strong>: Adversarial AI (R11) and Perceptual Hash Collisions (R18) render statistical forensics secondary to <strong>Vt²</strong> metadata and "DNA" pixel audits.</p></li>
 </ul>
 </div>
 </section>
@@ -222,7 +222,7 @@ As photorealistic synthetic media scales, the 2026 landscape relies on <strong>C
 <div class="flow-arrow">➔</div>
 <div class="w-1/4"><div class="flow-box"><div class="text-2xl mb-2">☁️</div><div class="font-bold text-neonblue text-xs uppercase tracking-widest">3. Distribute</div><div class="flow-threat text-[10px]">Exploit: Hash Collision</div></div></div>
 <div class="flow-arrow">➔</div>
-<div class="w-1/4"><div class="flow-box"><div class="text-2xl mb-2">🕵️</div><div class="font-bold text-neonblue text-xs uppercase tracking-widest">4. Verify</div><div class="flow-threat text-[10px]">Exploit: UI Spoofing</div></div></div>
+<div class="w-1/4"><div class="flow-box"><div class="text-2xl mb-2">🕵️</div><div class="font-bold text-neonblue text-xs uppercase tracking-widest">4. Verify</div><div class="flow-threat text-[10px]">Exploit: Integrity Clash</div></div></div>
 </div>
 </div>
 </section>
@@ -237,9 +237,10 @@ As photorealistic synthetic media scales, the 2026 landscape relies on <strong>C
 <div class="bg-cardbg p-4 rounded-2xl border border-gray-800"><div id="plotlyScatter" style="width:100%; height:550px;"></div></div>
 </section>
 
-<section id="strategy-intelligence" class="mb-24">
+<!-- Strategy restored -->
+<section class="mb-24">
 <div class="mb-10 text-center">
-<h2 class="text-3xl font-bold mb-4 uppercase tracking-tighter">Recommended Validation Strategy</h2>
+<h2 class="text-3xl font-bold mb-4 border-l-4 border-electricpink pl-4 uppercase tracking-tighter">Recommended Validation Strategy</h2>
 <p class="text-textdim max-w-4xl text-sm mx-auto italic">Move beyond implicit trust to a <strong>Vt²</strong> validation workflow using these five forensic steps.</p>
 </div>
 <div class="bg-cardbg p-8 rounded-xl border border-gray-800 card-elevation">
@@ -292,6 +293,16 @@ As photorealistic synthetic media scales, the 2026 landscape relies on <strong>C
 <div class="audit-item p-4 flex gap-4"><input type="checkbox" class="audit-checkbox"><div><h4 class="font-bold text-textlight">Noise Pattern (PRNU) Uniformity</h4><p>Verify stochastic sensor noise signature is uniform across the entire frame.</p></div></div>
 </div>
 </div>
+<div class="bg-cardbg p-8 rounded-2xl border border-gray-800 card-elevation">
+<h3 class="text-xl font-bold text-emerald-500 mb-6 uppercase tracking-widest flex items-center gap-2"><span class="text-2xl">🛡️</span> 5. Advanced Adversarial & Interface Audit</h3>
+<div class="space-y-4 text-xs text-textdim">
+<div class="audit-item p-4 flex gap-4 border-l-4 border-emerald-500 bg-emerald-500/5"><input type="checkbox" class="audit-checkbox"><div><h4 class="font-bold text-textlight">Exclusion Range & JUMBF Box Audit</h4><p>Check for malicious data (false GPS/ID) injected into unsigned JUMBF exclusion ranges. Ensure total manifest hash matches initial capture state.</p></div></div>
+<div class="audit-item p-4 flex gap-4 border-l-4 border-emerald-500 bg-emerald-500/5"><input type="checkbox" class="audit-checkbox"><div><h4 class="font-bold text-textlight">Perceptual Hash Bit-Diff Analysis</h4><p>Compare the soft-binding perceptual hash against the master reference. Flag any byte-level "collision Engineering" anomalies or second-preimage engineering.</p></div></div>
+<div class="audit-item p-4 flex gap-4 border-l-4 border-emerald-500 bg-emerald-500/5"><input type="checkbox" class="audit-checkbox"><div><h4 class="font-bold text-textlight">Semantic Veracity Verification</h4><p>Manually cross-verify weather, landmarks, and landmarks in the content against the signed GPS/Timestamp. A valid signature does not guarantee truth (Trust Model Loophole).</p></div></div>
+<div class="audit-item p-4 flex gap-4 border-l-4 border-emerald-500 bg-emerald-500/5"><input type="checkbox" class="audit-checkbox"><div><h4 class="font-bold text-textlight">Interface Badge Validation</h4><p>Never trust a visual "CR" icon. Click through to a certified validator (e.g. verify.contentcredentials.org) to confirm the L1-L3 disclosure state and cryptographic root.</p></div></div>
+<div class="audit-item p-4 flex gap-4 border-l-4 border-emerald-500 bg-emerald-500/5"><input type="checkbox" class="audit-checkbox"><div><h4 class="font-bold text-textlight underline">Cross-Layer Integrity (Integrity Clash)</h4><p>Simultaneously verify C2PA metadata AND pixel-level invisible watermarks. Flag assets where provenance claims human origin but pixels contain AI-generated signatures (DNA/Provenance mismatch).</p></div></div>
+</div>
+</div>
 </div>
 <div class="mt-12 p-8 bg-neonblue/10 border border-neonblue/30 rounded-xl text-center">
 <p class="text-sm font-bold text-neonblue uppercase tracking-widest">End of Vt² Audit Protocol</p>
@@ -303,125 +314,92 @@ As photorealistic synthetic media scales, the 2026 landscape relies on <strong>C
 <!-- VIEW: EVA -->
 <section id="view-eva" class="view-section px-4 sm:px-6 lg:px-8 py-12">
 <main class="max-w-6xl mx-auto">
-<header class="mb-12 border-b border-gray-800 pb-12">
+<header class="mb-12 border-b border-gray-800 pb-12 text-center">
 <h1 class="text-4xl font-bold mb-2 text-emerald-500 uppercase tracking-tight">Earned Value Analysis (EVA)</h1>
 <p class="text-textdim text-lg font-light italic">"Transitioning from manual detection-based trust to automated provenance authenticity."</p>
 </header>
-
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 text-center">
 <div class="bg-cardbg p-6 rounded-xl border border-gray-800"><p class="text-[9px] uppercase font-bold text-gray-500 tracking-widest">Pilot BAC</p><p class="text-2xl font-bold">$500,000</p></div>
 <div class="bg-cardbg p-6 rounded-xl border border-gray-800"><p class="text-[9px] uppercase font-bold text-gray-500 tracking-widest">Target Volume</p><p class="text-2xl font-bold">10,000 Assets</p></div>
 <div class="bg-cardbg p-6 rounded-xl border border-gray-800"><p class="text-[9px] uppercase font-bold text-gray-500 tracking-widest">Timeline</p><p class="text-2xl font-bold">12 Months</p></div>
 </div>
-
-<div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
-<div class="bg-bgbase p-6 rounded-xl border border-gray-800 metric-card"><div class="flex justify-between mb-4 text-center"><span class="text-[10px] font-bold text-gray-400">CPI</span><span class="formula-box">EV/AC</span></div><div class="text-4xl font-bold text-neonblue text-center">3.0</div><p class="text-[10px] text-textdim mt-2">Every $1 spent returns $3 in verification value.</p></div>
-<div class="bg-bgbase p-6 rounded-xl border border-gray-800 metric-card"><div class="flex justify-between mb-4 text-center"><span class="text-[10px] font-bold text-gray-400">SPI</span><span class="formula-box">EV/PV</span></div><div class="text-4xl font-bold text-emerald-500 text-center">1.5</div><p class="text-[10px] text-textdim mt-2">Automation has pushed pilot 50% ahead of schedule.</p></div>
-<div class="bg-bgbase p-6 rounded-xl border border-gray-800 metric-card"><div class="flex justify-between mb-4 text-center"><span class="text-[10px] font-bold text-gray-400">Cost Var</span><span class="formula-box">EV-AC</span></div><div class="text-4xl font-bold text-electricpink text-center">+$250k</div><p class="text-[10px] text-textdim mt-2">Milestone savings (Projected $333k total).</p></div>
-<div class="bg-bgbase p-6 rounded-xl border border-gray-800 metric-card"><div class="flex justify-between mb-4 text-center"><span class="text-[10px] font-bold text-gray-400 text-center">Efficiency</span><span class="formula-box text-center">3x Gain</span></div><div class="text-4xl font-bold text-alertorange text-center">7,500</div><p class="text-[10px] text-textdim mt-2">Assets verified vs. 5,000 planned.</p></div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12 text-center">
+<div class="bg-bgbase p-6 rounded-xl border border-gray-800 metric-card"><div class="flex justify-between mb-4"><span class="text-[10px] font-bold text-gray-400">CPI</span><span class="formula-box">EV/AC</span></div><div class="text-4xl font-bold text-neonblue">3.0</div><p class="text-[10px] text-textdim mt-2">Every $1 spent returns $3 in verification value.</p></div>
+<div class="bg-bgbase p-6 rounded-xl border border-gray-800 metric-card"><div class="flex justify-between mb-4"><span class="text-[10px] font-bold text-gray-400">SPI</span><span class="formula-box">EV/PV</span></div><div class="text-4xl font-bold text-emerald-500">1.5</div><p class="text-[10px] text-textdim mt-2">Automation has pushed pilot 50% ahead of schedule.</p></div>
+<div class="bg-bgbase p-6 rounded-xl border border-gray-800 metric-card"><div class="flex justify-between mb-4 text-[10px] font-bold text-gray-400 text-center">Cost Var<span class="formula-box">EV-AC</span></div><div class="text-4xl font-bold text-electricpink">+$250k</div><p class="text-[10px] text-textdim mt-2">Milestone savings (Projected $333k total).</p></div>
+<div class="bg-bgbase p-6 rounded-xl border border-gray-800 metric-card"><div class="flex justify-between mb-4 text-center"><span class="text-[10px] font-bold text-gray-400">Efficiency</span><span class="formula-box">3x Gain</span></div><div class="text-4xl font-bold text-alertorange">7,500</div><p class="text-[10px] text-textdim mt-2">Assets verified vs. 5,000 planned.</p></div>
 </div>
 
-<!-- Implementation Pillars Section (RESTORED) -->
+<div class="bg-cardbg rounded-2xl border border-gray-800 p-8 shadow-sm mb-16">
+<h3 class="text-xl font-bold mb-6 flex items-center uppercase tracking-tighter"><i class="fas fa-network-wired text-neonblue mr-2"></i> Savings Distribution Map</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+<div class="bg-bgbase p-5 rounded-xl border border-gray-800"><span class="text-[10px] font-bold text-neonblue uppercase block mb-2 tracking-widest">Stage 1: Capture</span><h4 class="font-bold text-textlight mb-2 text-sm">Hardware-Backed Trust</h4><p class="text-[11px] text-textdim italic leading-relaxed">Sony PXW-Z300 natively sign metadata. Zero marginal cost to "create" provenance during capture.</p></div>
+<div class="bg-emerald-500/10 p-5 rounded-xl border border-emerald-500 relative ring-2 ring-emerald-500 ring-offset-4 ring-offset-bgbase"><div class="absolute -top-3 right-4 bg-emerald-500 text-white px-2 py-1 rounded text-[9px] font-bold tracking-widest">PRIMARY SAVINGS</div><span class="text-[10px] font-bold text-emerald-500 uppercase block mb-2 tracking-widest">Stage 2: Ingest</span><h4 class="font-bold text-textlight mb-2 text-sm">Automated Verification</h4><p class="text-[11px] text-textdim leading-relaxed">c2pa-rs + AWS Lambda replaces manual forensic checks ($50/asset → $0.10/asset compute).</p></div>
+<div class="bg-bgbase p-5 rounded-xl border border-gray-800"><span class="text-[10px] font-bold text-electricpink uppercase block mb-2 tracking-widest">Stage 3: Distribute</span><h4 class="font-bold text-textlight mb-2 text-sm">Soft Binding Recovery</h4><p class="text-[11px] text-textdim italic leading-relaxed">Perceptual hashing re-attaches stripped metadata. Prevents re-verification for social media clips.</p></div>
+</div>
+</div>
+
 <section class="mb-16">
-    <div class="flex items-center mb-8">
-        <div class="bg-emerald-500/10 p-3 rounded-lg mr-4 border border-emerald-500/30 text-emerald-500">
-            <i class="fas fa-map-signs text-2xl"></i>
-        </div>
-        <h2 class="text-3xl font-bold uppercase tracking-tighter">Implementation Pillars</h2>
-    </div>
+    <div class="flex items-center mb-8"><div class="bg-emerald-500/10 p-3 rounded-lg mr-4 border border-emerald-500/30 text-emerald-500"><i class="fas fa-map-signs text-2xl"></i></div><h2 class="text-3xl font-bold uppercase tracking-tighter">Implementation Pillars</h2></div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
-        <div class="bg-cardbg p-8 rounded-2xl border border-gray-800 shadow-sm border-t-4 border-emerald-500 hover:border-neonblue transition duration-300">
-            <div class="text-emerald-500 mb-4 text-3xl"><i class="fas fa-microchip"></i></div>
-            <h3 class="text-xl font-bold mb-4 text-textlight uppercase tracking-tight">Phased Hardware</h3>
-            <ul class="text-xs text-textdim space-y-3">
-                <li class="flex items-start"><i class="fas fa-check text-emerald-500 mt-1 mr-2"></i><span>Prioritize Sony PXW-Z300 for high-risk field reporting.</span></li>
-                <li class="flex items-start"><i class="fas fa-check text-emerald-500 mt-1 mr-2"></i><span>Equip mobile units with Pixel 10 (Titan M2 signing).</span></li>
-            </ul>
+        <div class="bg-cardbg p-8 rounded-2xl border border-gray-800 border-t-4 border-emerald-500 hover:border-neonblue transition duration-300 shadow-sm"><div class="text-emerald-500 mb-4 text-3xl"><i class="fas fa-microchip"></i></div><h3 class="text-xl font-bold mb-4 text-textlight uppercase tracking-tight">Phased Hardware</h3>
+            <ul class="text-xs text-textdim space-y-3"><li class="flex items-start"><i class="fas fa-check text-emerald-500 mt-1 mr-2"></i><span>Prioritize Sony PXW-Z300 for high-risk field reporting.</span></li><li class="flex items-start"><i class="fas fa-check text-emerald-500 mt-1 mr-2"></i><span>Equip mobile units with Pixel 10 (Titan M2 signing).</span></li></ul>
         </div>
-        <div class="bg-cardbg p-8 rounded-2xl border border-gray-800 shadow-sm border-t-4 border-emerald-500 hover:border-neonblue transition duration-300">
-            <div class="text-emerald-500 mb-4 text-3xl"><i class="fas fa-cloud"></i></div>
-            <h3 class="text-xl font-bold mb-4 text-textlight uppercase tracking-tight">Serverless Pipeline</h3>
-            <ul class="text-xs text-textdim space-y-3">
-                <li class="flex items-start"><i class="fas fa-check text-emerald-500 mt-1 mr-2"></i><span>AWS Lambda + c2pa-rs for high-throughput ingest.</span></li>
-                <li class="flex items-start"><i class="fas fa-check text-emerald-500 mt-1 mr-2"></i><span>Zero per-seat licensing via open-source toolchain.</span></li>
-            </ul>
+        <div class="bg-cardbg p-8 rounded-2xl border border-gray-800 border-t-4 border-emerald-500 hover:border-neonblue transition duration-300 shadow-sm"><div class="text-emerald-500 mb-4 text-3xl"><i class="fas fa-cloud"></i></div><h3 class="text-xl font-bold mb-4 text-textlight uppercase tracking-tight">Serverless Pipeline</h3>
+            <ul class="text-xs text-textdim space-y-3"><li class="flex items-start"><i class="fas fa-check text-emerald-500 mt-1 mr-2"></i><span>AWS Lambda + c2pa-rs for high-throughput ingest.</span></li><li class="flex items-start"><i class="fas fa-check text-emerald-500 mt-1 mr-2"></i><span>Zero per-seat licensing via open-source toolchain.</span></li></ul>
         </div>
-        <div class="bg-cardbg p-8 rounded-2xl border border-gray-800 shadow-sm border-t-4 border-emerald-500 hover:border-neonblue transition duration-300">
-            <div class="text-emerald-500 mb-4 text-3xl"><i class="fas fa-shield-alt"></i></div>
-            <h3 class="text-xl font-bold mb-4 text-textlight uppercase tracking-tight">Durable Credentials</h3>
-            <ul class="text-xs text-textdim space-y-3">
-                <li class="flex items-start"><i class="fas fa-check text-emerald-500 mt-1 mr-2"></i><span>Soft Bindings via perceptual hashing for social media.</span></li>
-                <li class="flex items-start"><i class="fas fa-check text-emerald-500 mt-1 mr-2"></i><span>Departmental CA signing ($289/yr) vs. per-user.</span></li>
-            </ul>
+        <div class="bg-cardbg p-8 rounded-2xl border border-gray-800 border-t-4 border-emerald-500 hover:border-neonblue transition duration-300 shadow-sm"><div class="text-emerald-500 mb-4 text-3xl"><i class="fas fa-shield-alt"></i></div><h3 class="text-xl font-bold mb-4 text-textlight uppercase tracking-tight">Durable Credentials</h3>
+            <ul class="text-xs text-textdim space-y-3"><li class="flex items-start"><i class="fas fa-check text-emerald-500 mt-1 mr-2"></i><span>Soft Bindings via perceptual hashing for social media.</span></li><li class="flex items-start"><i class="fas fa-check text-emerald-500 mt-1 mr-2"></i><span>Departmental CA signing ($289/yr) vs. per-user.</span></li></ul>
         </div>
     </div>
 </section>
 
-<!-- Sourcing -->
 <div class="bg-slate-900 rounded-3xl p-10 text-white relative overflow-hidden border border-gray-800">
 <h2 class="text-3xl font-bold mb-8 uppercase tracking-tighter">Strategic Sourcing Analysis</h2>
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 relative z-10">
-<div>
-<h3 class="text-emerald-400 font-bold mb-4 uppercase text-xs flex items-center"><i class="fas fa-unlock-alt mr-2"></i> Open Source (c2pa-rs)</h3>
-<p class="text-slate-400 text-[11px] mb-6 leading-relaxed">The primary engine for the pilot, offering total auditability and zero software licensing costs.</p>
-<div class="space-y-4">
-<div class="bg-cardbg p-4 rounded-xl border border-gray-800"><p class="text-[9px] text-gray-500 uppercase font-black tracking-widest">Procurement</p><p class="font-bold text-emerald-400 text-sm tracking-tight">Free (MIT/Apache 2.0)</p></div>
-<div class="bg-cardbg p-4 rounded-xl border border-gray-800"><p class="text-[9px] text-gray-500 uppercase font-black tracking-widest">Auditability</p><p class="font-bold text-sm tracking-tight">Transparent, community-vetted code</p></div>
-</div>
-</div>
-<div class="opacity-70">
-<h3 class="text-red-400 font-bold mb-4 uppercase text-xs flex items-center"><i class="fas fa-lock mr-2"></i> Commercial SaaS</h3>
-<p class="text-slate-400 text-[11px] mb-6 leading-relaxed">High recurring fees and restricted black-box updates.</p>
-<div class="space-y-4">
-<div class="bg-cardbg p-4 rounded-xl border border-gray-800"><p class="text-[9px] text-gray-500 uppercase font-black tracking-widest">Procurement</p><p class="font-bold text-red-400 text-sm tracking-tight">High Annual Fees</p></div>
-<div class="bg-cardbg p-4 rounded-xl border border-gray-800"><p class="text-[9px] text-gray-500 uppercase font-black tracking-widest">Auditability</p><p class="font-bold text-sm tracking-tight">Proprietary "Black Box" Algorithms</p></div>
-</div>
-</div>
-</div>
-<div class="absolute -bottom-20 -right-20 w-64 h-64 bg-neonblue/10 rounded-full blur-3xl"></div>
+<div><h3 class="text-emerald-400 font-bold mb-4 uppercase text-xs flex items-center"><i class="fas fa-unlock-alt mr-2"></i> Open Source (c2pa-rs)</h3><p class="text-slate-400 text-[11px] mb-6 leading-relaxed">The primary engine for the pilot, offering total auditability and zero software licensing costs.</p>
+<div class="space-y-4"><div class="bg-cardbg p-4 rounded-xl border border-gray-800"><p class="text-[9px] text-gray-500 uppercase font-black tracking-widest">Procurement</p><p class="font-bold text-emerald-400 text-sm tracking-tight">Free (MIT/Apache 2.0)</p></div><div class="bg-cardbg p-4 rounded-xl border border-gray-800"><p class="text-[9px] text-gray-500 uppercase font-black tracking-widest">Auditability</p><p class="font-bold text-sm tracking-tight">Transparent, community-vetted code</p></div></div></div>
+<div class="opacity-70"><h3 class="text-red-400 font-bold mb-4 uppercase text-xs flex items-center"><i class="fas fa-lock mr-2"></i> Commercial SaaS</h3><p class="text-slate-400 text-[11px] mb-6 leading-relaxed">High recurring fees and restricted black-box updates.</p>
+<div class="space-y-4"><div class="bg-cardbg p-4 rounded-xl border border-gray-800"><p class="text-[9px] text-gray-500 uppercase font-black tracking-widest">Procurement</p><p class="font-bold text-red-400 text-sm tracking-tight">High Annual Fees</p></div><div class="bg-cardbg p-4 rounded-xl border border-gray-800"><p class="text-[9px] text-gray-500 uppercase font-black tracking-widest">Auditability</p><p class="font-bold text-sm tracking-tight">Proprietary "Black Box" Algorithms</p></div></div></div>
+</div><div class="absolute -bottom-20 -right-20 w-64 h-64 bg-neonblue/10 rounded-full blur-3xl"></div>
 </div>
 </main>
 </section>
 
 <footer class="bg-gray-900 border-t border-gray-800 py-12 mt-auto text-center">
-<div class="max-w-7xl mx-auto px-4">
-<p class="text-neonblue font-bold tracking-widest text-[10px] uppercase mb-2 italic">ProvenanceCORE // 2026 AUDIT SUITE</p>
-<p class="text-gray-600 text-[9px] uppercase tracking-widest">Confidential Framework Synthesis // Rendered via Canvas/WebGL</p>
-</div>
+<div class="max-w-7xl mx-auto px-4"><p class="text-neonblue font-bold tracking-widest text-[10px] uppercase mb-2 italic">ProvenanceCORE // 2026 AUDIT SUITE</p><p class="text-gray-600 text-[9px] uppercase tracking-widest">Confidential Framework Synthesis // Rendered via Canvas/WebGL</p></div>
 </footer>
 
 <!-- MODAL -->
 <div id="riskModal" onclick="if(event.target === this) toggleModal()"><div class="modal-content card-elevation" onclick="event.stopPropagation()">
-<div class="flex justify-between items-center p-6 border-b border-gray-800 bg-bgbase">
-<h3 class="text-xl font-bold text-neonblue tracking-widest uppercase">Detailed Risk Register (2026)</h3>
-<button onclick="toggleModal()" class="text-textdim hover:text-white text-3xl font-light leading-none">&times;</button>
-</div>
-<div class="overflow-y-auto p-6 bg-cardbg"><table class="w-full text-left border-collapse min-w-[1000px]"><thead><tr class="bg-bgbase border-b border-gray-800"><th class="px-4 py-3 text-[10px] font-black uppercase text-neonblue w-16 text-center">ID</th><th class="px-4 py-3 text-[10px] font-black uppercase text-neonblue w-32">Category</th><th class="px-4 py-3 text-[10px] font-black uppercase text-neonblue">Description</th><th class="px-4 py-3 text-[10px] font-black uppercase text-neonblue">Impact</th><th class="px-4 py-3 text-[10px] font-black uppercase text-neonblue">Mitigation</th></tr></thead><tbody id="riskTableBody" class="text-[11px] divide-y divide-gray-800/50"></tbody></table></div>
+<div class="flex justify-between items-center p-6 border-b border-gray-800 bg-bgbase"><h3 class="text-xl font-bold text-neonblue tracking-widest uppercase">Detailed Risk Register (2026)</h3><button onclick="toggleModal()" class="text-textdim hover:text-white text-3xl font-light leading-none">&times;</button></div>
+<div class="overflow-y-auto p-6 bg-cardbg"><table class="w-full text-left border-collapse min-w-[1000px]"><thead><tr class="bg-bgbase border-b border-gray-800"><th class="px-4 py-3 text-[10px] font-black uppercase text-neonblue w-16 text-center">ID</th><th class="px-4 py-3 text-[10px] font-black uppercase text-neonblue w-32">Category</th><th class="px-4 py-3 text-[10px] font-black uppercase text-neonblue">Description</th><th class="px-4 py-3 text-[10px] font-black uppercase text-neonblue text-center">Impact</th><th class="px-4 py-3 text-[10px] font-black uppercase text-neonblue">Mitigation</th></tr></thead><tbody id="riskTableBody" class="text-[11px] divide-y divide-gray-800/50"></tbody></table></div>
 <div class="p-4 border-t border-gray-800 bg-bgbase text-right"><button onclick="toggleModal()" class="px-6 py-2 bg-gray-700 text-white text-[10px] font-bold uppercase rounded-lg tracking-widest">Close Register</button></div>
 </div></div>
 
 <script>
 const RISK_DATA = [
-{ id: "R1", cat: "Strategic", desc: "Obsolescence of Legacy Content.", impact: "Loss of competitive edge.", mit: "Retrospective 'Edit' manifests." },
-{ id: "R2", cat: "Strategic", desc: "Trust Tiering Fragmentation.", impact: "Inconsistent verification.", mit: "2026 Global Standard migration." },
-{ id: "R3", cat: "Operational", desc: "Temporal Manipulation.", impact: "Forensic timeline failure.", mit: "RFC 3161 TSA integration." },
-{ id: "R4", cat: "Operational", desc: "Hardware Injection (Nikon).", impact: "Valid signatures on fakes.", mit: "TEE sensor input validation." },
-{ id: "R5", cat: "Operational", desc: "Metadata Stripping.", impact: "Loss of provenance chain.", mit: "Three-pillar cloud recovery." },
-{ id: "R6", cat: "Financial", desc: "Asset Devaluation (TDM).", impact: "Licensing revenue loss.", mit: "TDM flag legal enforcement." },
-{ id: "R7", cat: "Financial", desc: "Compliance Costs.", impact: "CapEx newsroom strain.", mit: "Tiered hardware deployment." },
-{ id: "R8", cat: "Compliance", desc: "EU AI Act Violation.", impact: "Heavy regulatory fines.", mit: "Automated ingest AI assertions." },
-{ id: "R9", cat: "Compliance", desc: "Revocation Blindness.", impact: "Accepting revoked hardware.", mit: "Real-time OCSP configuration." },
-{ id: "R10", cat: "Reputational", desc: "Fake Meeting Attack.", impact: "Impersonation success.", mit: "Freshness nonces in tokens." },
-{ id: "R11", cat: "External", desc: "Adversarial AI Evolution.", impact: "Detection efficacy failure.", mit: "Hybrid <strong>Vt²</strong> metadata audits." },
-{ id: "R12", cat: "ESG", desc: "Information Social Integrity.", impact: "Propaganda proliferation.", mit: "First-mile sensor trust priority." },
-{ id: "R13", cat: "ESG", desc: "Inclusion/Bias in AI.", impact: "Ethical media backlash.", mit: "Transparent prompt disclosure." },
-{ id: "R14", cat: "Project", desc: "Graph Integration Debt.", impact: "Broken Ingredient chains.", mit: "Standardize on C2PA v3 Spec." },
-{ id: "R15", cat: "Project", desc: "Validation Latency.", impact: "News window bottlenecks.", mit: "Automated triage tiers." },
-{ id: "R16", cat: "Strategic", desc: "Trust Model Loophole: Valid sigs on fake semantic data.", impact: "Deepfakes with authoritative veneer.", mit: "Forensic-grade capture triangulation." },
-{ id: "R17", cat: "Operational", desc: "Hardware Sensor Injection: Dismantling camera for AI injection.", impact: "Enclave signs fake digital inputs.", mit: "Sensor-to-processor encryption." },
-{ id: "R18", cat: "External", desc: "Perceptual Hash Collisions: Second preimage attacks on soft bindings.", impact: "Valid credentials applied to fake file.", mit: "Robust-Fingerprint Optimization (RFO)." },
-{ id: "R19", cat: "External", desc: "UI/Badge Spoofing: Photoshopped 'CR' pins on synthetic media.", impact: "Psychological bias of presence.", mit: "L1-L3 browser disclosure standard." },
-{ id: "R20", cat: "Operational", desc: "Exclusion Range Exploit: inserting false metadata (GPS) in redacted fields.", impact: "Conforming validators report 'Valid'.", mit: "Strict File Integrity & sensor correlation." }
+{ id: "R1", cat: "Strategic", desc: "Obsolescence of Legacy Content.", impact: "8", mit: "Retrospective 'Edit' manifests." },
+{ id: "R2", cat: "Strategic", desc: "Trust Tiering Fragmentation.", impact: "7", mit: "2026 Global Standard migration." },
+{ id: "R3", cat: "Operational", desc: "Temporal Manipulation.", impact: "9", mit: "RFC 3161 TSA integration." },
+{ id: "R4", cat: "Operational", desc: "Hardware Injection (Nikon).", impact: "10", mit: "TEE sensor input validation." },
+{ id: "R5", cat: "Operational", desc: "Metadata Stripping.", impact: "8", mit: "Three-pillar cloud recovery." },
+{ id: "R6", cat: "Financial", desc: "Asset Devaluation (TDM).", impact: "7", mit: "TDM flag legal enforcement." },
+{ id: "R7", cat: "Financial", desc: "Compliance Costs.", impact: "6", mit: "Tiered hardware deployment." },
+{ id: "R8", cat: "Compliance", desc: "EU AI Act Violation.", impact: "9", mit: "Automated ingest AI assertions." },
+{ id: "R9", cat: "Compliance", desc: "Revocation Blindness.", impact: "9", mit: "Real-time OCSP configuration." },
+{ id: "R10", cat: "Reputational", desc: "Fake Meeting Attack.", impact: "8", mit: "Freshness nonces in tokens." },
+{ id: "R11", cat: "External", desc: "Adversarial AI Evolution.", impact: "9", mit: "Hybrid <strong>Vt²</strong> metadata audits." },
+{ id: "R12", cat: "ESG", desc: "Information Social Integrity.", impact: "8", mit: "First-mile sensor trust priority." },
+{ id: "R13", cat: "ESG", desc: "Inclusion/Bias in AI.", impact: "7", mit: "Transparent prompt disclosure." },
+{ id: "R14", cat: "Project", desc: "Graph Integration Debt.", impact: "7", mit: "Standardize on C2PA v3 Spec." },
+{ id: "R15", cat: "Project", desc: "Validation Latency.", impact: "7", mit: "Automated triage tiers." },
+{ id: "R16", cat: "Strategic", desc: "Trust Model Loophole: Valid sigs on fake semantic data.", impact: "10", mit: "Forensic-grade capture triangulation." },
+{ id: "R17", cat: "Operational", desc: "Hardware Sensor Injection: Dismantling camera for AI injection.", impact: "10", mit: "Sensor-to-processor encryption." },
+{ id: "R18", cat: "External", desc: "Perceptual Hash Collisions: Second preimage attacks on soft bindings.", impact: "8", mit: "Robust-Fingerprint Optimization (RFO)." },
+{ id: "R19", cat: "External", desc: "UI/Badge Spoofing: Photoshopped 'CR' pins on synthetic media.", impact: "8", mit: "L1-L3 browser disclosure standard." },
+{ id: "R20", cat: "Operational", desc: "Exclusion Range Exploit: inserting false metadata in redacted fields.", impact: "9", mit: "Strict File Integrity & sensor correlation." },
+{ id: "R21", cat: "Strategic", desc: "Integrity Clash: Desynchronized provenance and pixel watermarking.", impact: "10", mit: "Cross-Layer Audit Protocols (Joint Auditing)." }
 ];
 
 function showView(viewId) {
@@ -430,37 +408,24 @@ function showView(viewId) {
     if (target) {
         target.classList.add('active');
         window.scrollTo(0, 0);
-        if(viewId === 'intelligence') {
-            setTimeout(() => { Plotly.Plots.resize(document.getElementById('plotlyScatter')); }, 100);
-        }
+        if(viewId === 'intelligence') { setTimeout(() => { Plotly.Plots.resize(document.getElementById('plotlyScatter')); }, 100); }
     }
 }
-
 function toggleModal() { document.getElementById('riskModal').classList.toggle('active'); }
 
 window.onload = function() {
-document.getElementById('riskTableBody').innerHTML = RISK_DATA.map(r => `<tr class="hover:bg-neonblue/5 transition text-xs"><td class="px-4 py-3 font-bold text-neonblue text-center border-r border-gray-800">${r.id}</td><td class="px-4 py-3 uppercase tracking-tighter font-bold text-textdim text-[9px]">${r.cat}</td><td class="px-4 py-3 font-semibold text-textlight">${r.desc}</td><td class="px-4 py-3 text-textdim">${r.impact}</td><td class="px-4 py-3 text-neonblue/90 font-medium italic">${r.mit}</td></tr>`).join('');
+document.getElementById('riskTableBody').innerHTML = RISK_DATA.map(r => `<tr class="hover:bg-neonblue/5 transition text-xs"><td class="px-4 py-3 font-bold text-neonblue text-center border-r border-gray-800">${r.id}</td><td class="px-4 py-3 uppercase tracking-tighter font-bold text-textdim text-[9px]">${r.cat}</td><td class="px-4 py-3 font-semibold text-textlight">${r.desc}</td><td class="px-4 py-3 text-textdim text-center">${r.impact}</td><td class="px-4 py-3 text-neonblue/90 font-medium italic">${r.mit}</td></tr>`).join('');
 const donutCtx = document.getElementById('riskDonutChart').getContext('2d');
-new Chart(donutCtx, { type: 'doughnut', data: { labels: ["Strategic", "Operational", "Financial", "Compliance", "Reputational", "External", "ESG", "Project"], datasets: [{ data: [3,5,2,2,1,3,2,2], backgroundColor: ['#06b6d4','#f97316','#ec4899','#8b5cf6','#14b8a6','#facc15','#10b981','#6366f1'], borderWidth: 0 }] }, options: { responsive: true, maintainAspectRatio: false, cutout: '75%', plugins: { legend: { position: 'right', labels: { color: '#cbd5e1', font: { size: 9 } } } } } });
+new Chart(donutCtx, { type: 'doughnut', data: { labels: ["Strategic", "Operational", "Financial", "Compliance", "Reputational", "External", "ESG", "Project"], datasets: [{ data: [4,5,2,2,1,3,2,2], backgroundColor: ['#06b6d4','#f97316','#ec4899','#8b5cf6','#14b8a6','#facc15','#10b981','#6366f1'], borderWidth: 0 }] }, options: { responsive: true, maintainAspectRatio: false, cutout: '75%', plugins: { legend: { position: 'right', labels: { color: '#cbd5e1', font: { size: 9 } } } } } });
 
 const jitter = (v) => v + (Math.random() - 0.5) * 0.15;
-// Including R16-R20 coordinates
+// Jittered coordinates for 21 risks
 const scatterData = { 
-    x: [7,6.5,9.5,10,8.5,7.5,6,9.5,9,8,9,8.5,7,8,7.5, 9.5, 9.8, 8, 8.5, 9.2].map(jitter), 
-    y: [8,7,9.5,10,8,8.5,7,9,8.5,7.5,9,8,6.5,7.5,7, 9.9, 9.5, 7.5, 8.2, 9.0].map(jitter), 
-    mode: 'markers+text', type: 'scattergl', 
-    text: RISK_DATA.map(r => r.id), 
-    textposition: 'top center', textfont: { family: 'Inter', color: '#cbd5e1', size: 10, weight: 'bold' }, 
-    marker: { size: 16, color: RISK_DATA.map(r => r.cat === 'Operational' ? '#f97316' : (r.cat === 'Compliance' ? '#8b5cf6' : (r.cat === 'Strategic' ? '#06b6d4' : '#ec4899'))), line: { color: '#0f172a', width: 2 } }, 
-    hovertext: RISK_DATA.map(r => `<b>Vt² INSIGHT: ${r.id}</b><br><i>${r.desc}</i><br><b>MITIGATION:</b> ${r.mit}`) 
+    x: [7,6.5,9.5,10,8.5,7.5,6,9.5,9,8,9,8.5,7,8,7.5, 9.5, 9.8, 8, 8.5, 9.2, 9.8].map(jitter), 
+    y: [8,7,9.5,10,8,8.5,7,9,8.5,7.5,9,8,6.5,7.5,7, 9.9, 9.5, 7.5, 8.2, 9.0, 9.9].map(jitter), 
+    mode: 'markers+text', type: 'scattergl', text: RISK_DATA.map(r => r.id), textposition: 'top center', textfont: { family: 'Inter', color: '#cbd5e1', size: 10, weight: 'bold' }, marker: { size: 16, color: RISK_DATA.map(r => r.cat === 'Operational' ? '#f97316' : (r.cat === 'Compliance' ? '#8b5cf6' : (r.cat === 'Strategic' ? '#06b6d4' : '#ec4899'))), line: { color: '#0f172a', width: 2 } }, hovertext: RISK_DATA.map(r => `<b>Vt² INSIGHT: ${r.id}</b><br><i>${r.desc}</i><br><b>MITIGATION:</b> ${r.mit}`) 
 };
-const scatterLayout = { 
-    paper_bgcolor: 'rgba(0,0,0,0)', plot_bgcolor: 'rgba(0,0,0,0)', 
-    font: { family: 'Inter', color: '#64748b' }, 
-    xaxis: { title: 'Likelihood of Exploitation (1-10 Scale)', gridcolor: '#1e293b', range: [5.5, 10.5], zeroline: false }, 
-    yaxis: { title: 'Severity of Impact (1-10 Scale)', gridcolor: '#1e293b', range: [5.5, 10.5], zeroline: false }, 
-    margin: { l: 40, r: 20, t: 20, b: 60 }, hovermode: 'closest' 
-};
+const scatterLayout = { paper_bgcolor: 'rgba(0,0,0,0)', plot_bgcolor: 'rgba(0,0,0,0)', font: { family: 'Inter', color: '#64748b' }, xaxis: { title: 'Likelihood of Exploitation (1-10 Scale)', gridcolor: '#1e293b', range: [5.5, 10.5], zeroline: false }, yaxis: { title: 'Severity of Impact (1-10 Scale)', gridcolor: '#1e293b', range: [5.5, 10.5], zeroline: false }, margin: { l: 40, r: 20, t: 20, b: 60 }, hovermode: 'closest' };
 Plotly.newPlot('plotlyScatter', [scatterData], scatterLayout, { displayModeBar: true, responsive: true, modeBarButtonsToRemove: ['lasso2d', 'select2d'], displaylogo: false });
 };
 </script>
